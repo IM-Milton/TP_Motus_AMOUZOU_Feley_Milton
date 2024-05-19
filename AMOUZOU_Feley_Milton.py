@@ -1,5 +1,5 @@
 from random import randint
-import colorama #J'ai du installer colorama pour que ça marche
+import colorama #J'ai du installer colorama pour que ça marche: pip install colorama
 colorama.init()
 RED = colorama.Back.RED
 GREEN = colorama.Back.GREEN
