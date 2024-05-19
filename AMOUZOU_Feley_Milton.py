@@ -114,9 +114,8 @@ def partieNaive(x):
     words =  dico[len(x)]# on part du principe que words est la liste de mots de longueur x qui se trouve dans le dictionnaire
     etatPartie = False
     #Construction de la variable comp
-    #A refaire ajouter à la premiere case 2 
-    comp = []
-    for i in range(len(x)):
+    comp = [2]
+    for i in range(len(x) - 1):
         comp.append(1)
 
     for i in range(len(comp)):
