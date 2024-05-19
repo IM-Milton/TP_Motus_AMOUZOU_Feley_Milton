@@ -1,5 +1,5 @@
 from random import randint
-import colorama #J'ai du installer colorama pour que ça marche: pip install colorama
+import colorama 
 colorama.init()
 RED = colorama.Back.RED
 GREEN = colorama.Back.GREEN
@@ -17,7 +17,7 @@ def StockageList():
     liste =[]
     with open(chemin,"r") as f:
         contenu = f.read()
-        liste = [mot.strip() for mot in contenu.split("\n") if 4 <= len(mot) <= 12] # A bien expliquer
+        liste = [mot.strip() for mot in contenu.split("\n") if 4 <= len(mot) <= 12] 
     return liste
 
 def randomWord(dico):
@@ -26,7 +26,7 @@ def randomWord(dico):
 def randomWord(dico, l):
     return dico[l][randint(0,len(dico[l])-1)]
 
-#Fonction Stockage qui prend en paramètre une liste de mots et qui renvoie un dictionnaire dont les clés sont les longueurs des mots et les valeurs sont des listes de mots de cette longueur.
+
 def StockageDico(liste):
     dictionnaire = {}
     for i in range(len(liste)):
@@ -59,8 +59,8 @@ def verifyWord(w, dico):
             return True
     return False
 
-#Noulie pas n la taille du mot dans le rapport
-def isValid(w : str, x, dico):
+
+def isValid(w , x, dico):
     l = len(x)
     if l == len(w) and verifyWord(w, dico) and w[0] == x[0]:
         return True
@@ -107,7 +107,7 @@ def updateWord(words, w, comp):
             Liste.append(i)
     return Liste
 
-# le concept de ce code est d'utiliser la liste comp pour trouver la solution de façon iterative
+# le but de ce code est d'utiliser la liste comp pour trouver la solution de façon iterative
 def partieNaive(x):
     n = 0 #Soit n le nombre de tentative effectué
     dico = StockageDico(StockageList())
@@ -126,8 +126,6 @@ def partieNaive(x):
     print('Le mot à deviner est', listeSolu[0])
     return n
 
-#A revoir et à bien expliquer si je comprend bien; et il faut parler d la premiere lettre du mot si il est valide alors on as pas besoin d'utiliser un tableau vide
-#Question 7 et 8
 def compare(w, x):
     tableau = []
     for i in range(len(w)):
@@ -137,7 +135,7 @@ def compare(w, x):
             tableau.append(1)
     return tableau
 
-# A bien expliquer
+
 def printCompare(w, tableau):
     for i in range(len(tableau)):
         if tableau[i] == 1:
@@ -149,17 +147,9 @@ def printCompare(w, tableau):
 #Partie code
 Liste = StockageList()
 Dico = StockageDico(Liste)
-print(partieNaive('rocker'))
+partie(5)
+#print(partieNaive('rocker'))
 
-#Début du jeu
-# parler du fait qu'il y a pas de surchage de fonction en python
-#Je choisie un mot de taille aléatoire à deviner 
 
-# Question 1  exo2 la meilleur strucutre de donnée pour stocker les mots dans un dictionnaire est 
-#un dictionnaire de dictionnaire avec pour clé dans le premier dictionnaire la taille du mot et 
-#pour clé dans le deuxième dictionnaire la première de tout les mots de taille n et pour valeur la liste des mots de taille n
-#Example : {4 : {'a' : ['abri', 'arbre', 'aile', 'ami', 'age', 'aide', 'aube', 'aide
-# 
-#Comme ça on peut accéder directement à la liste des mots de taille du mot à deviner en temps constant
 
 
