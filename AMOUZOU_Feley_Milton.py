@@ -155,7 +155,11 @@ print(partieNaive('rocker'))
 # parler du fait qu'il y a pas de surchage de fonction en python
 #Je choisie un mot de taille aléatoire à deviner 
 
-#Question 1  exo2 la meilleur strucutre de donnée pour stocker les mots dans un dictionnaire est le faire de stocker les mots dans une liste portant en clé la taille de chaque mot de la liste 
+# Question 1  exo2 la meilleur strucutre de donnée pour stocker les mots dans un dictionnaire est 
+#un dictionnaire de dictionnaire avec pour clé dans le premier dictionnaire la taille du mot et 
+#pour clé dans le deuxième dictionnaire la première de tout les mots de taille n et pour valeur la liste des mots de taille n
+#Example : {4 : {'a' : ['abri', 'arbre', 'aile', 'ami', 'age', 'aide', 'aube', 'aide
+# 
 #Comme ça on peut accéder directement à la liste des mots de taille du mot à deviner en temps constant
 
 
